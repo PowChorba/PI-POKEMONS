@@ -2,3 +2,35 @@
     width: 100px;
     height: 50px;
 }
+
+.titulo {
+    font-size: 30px;
+}
+
+.nav {
+    display: flex;
+    width: 75%;
+    margin: 0px auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ul {
+    display: flex;
+    align-items: center;
+}
+
+.lista {
+    list-style: none;
+    padding: 0px 5px ;
+    font-size: 20px;
+}
+
+.link {
+    text-decoration: none;
+    color: #000
+}
+
+.asd{
+    font-size: 24px;
+}

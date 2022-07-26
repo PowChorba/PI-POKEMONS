@@ -1,0 +1,33 @@
+.contenedor {
+    width: 50%;
+    margin: 0px auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.filtrados {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+
+.titulo {
+    text-align: center;
+}
+
+.precargar {
+    text-align: center;
+}
+
+.paginado {
+    display: flex;
+    justify-content: center;
+}
+
+.paginado2 {
+    display: none;
+}

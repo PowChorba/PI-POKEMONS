@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getPokemonDetails } from "../Redux/Actions";
 import CardComplete from './CardComplete.jsx'
-
+import Silueta from '../imagenes/picachu.jpg'
 
 export default function Details() {
     const dispatch = useDispatch()
@@ -13,9 +13,7 @@ export default function Details() {
     useEffect(() => {
         dispatch(getPokemonDetails(params.id))
     }, [dispatch, params.id])    
-    // console.log(params.id)
-    // console.log(pokemonDetail[0].id)
-    // console.log(pokemonDetail[0])
+    
     return(
         <div>
             <h2>Pokemon Detail</h2>
@@ -24,7 +22,7 @@ export default function Details() {
                 <div>
                     <CardComplete
                         name={pokemonDetail[0].name}
-                        img={pokemonDetail[0].img}
+                        img={pokemonDetail[0].img ? pokemonDetail[0].img : Silueta}
                         health={pokemonDetail[0].health}
                         attack={pokemonDetail[0].attack}
                         defense={pokemonDetail[0].defense}

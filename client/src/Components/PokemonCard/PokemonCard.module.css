@@ -1,0 +1,13 @@
+.contenedor {
+    text-align: center;
+    margin: 15px;
+}
+
+.name:first-letter {
+    text-transform: uppercase;
+}
+
+.imagen {
+    width: 250px;
+    height: 175px;
+}

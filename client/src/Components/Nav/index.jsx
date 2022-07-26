@@ -1,20 +1,25 @@
 import React from "react";
 import pokeball from '../imagenes/pokeball-nav.png'
 import s from './index.module.css'
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 export default function Nav(){
     return(
-        <div>
-            <Link to='/home'>
-                <h3>PokemonsAPI</h3>
-            </Link>
+        <div className={s.nav}>
+            <h3 className={s.titulo}>PokeDex</h3>
             <img src={pokeball} alt="Aca iria una pokeball" className={s.pokeball}/>
-            <div>
-                <p>Home</p>
-                <Link to='/create'>
-                    <p>Create</p>
-                </Link>
-            </div>
+            <ul className={s.ul}>
+                <li className={s.lista}>
+                    <NavLink to='/home' activeClassName={s.asd} className={s.link}>
+                        <p>Home</p>
+                    </NavLink>
+                </li>
+                <li className={s.lista}>
+                    <NavLink to='/create' activeClassName={s.asd}   className={s.link}>
+                        <p>Create</p>
+                    </NavLink>
+                </li>
+            </ul>
+            
         </div>)
 }
