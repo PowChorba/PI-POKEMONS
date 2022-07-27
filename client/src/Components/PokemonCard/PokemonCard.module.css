@@ -1,6 +1,22 @@
 .contenedor {
     text-align: center;
     margin: 15px;
+    background-color: rgba(255, 255, 255, 0.623);
+    border-radius: 15px;
+    padding: 15px 5px;
+    cursor: pointer;
+}
+
+.contenedor:hover {
+    transform: scale(150%);
+    background-color: #fff;
+    border-radius: 0px;
+    transition: 0.8s ease-in-out;
+}
+
+.name {
+    font-size: 24px;
+    margin: 15px 0px;
 }
 
 .name:first-letter {
@@ -10,4 +26,18 @@
 .imagen {
     width: 250px;
     height: 175px;
+    margin: 5px 0px;
+}
+
+.btn{
+    border: none;
+    background-color: #d13400b4;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 15px 0px;
+}
+
+.btn:hover{
+    background-color: #d13300;
 }

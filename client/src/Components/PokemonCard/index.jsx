@@ -20,7 +20,7 @@ export default function PokemonCard({id,name,types, img}){
             </div> */}
             <p className={s.types}>{types.join(' ')}</p>
             <Link to={`/home/${id}`}>
-                <button>Details</button>
+                <button className={s.btn}>Details</button>
             </Link>
         </div>)
 }

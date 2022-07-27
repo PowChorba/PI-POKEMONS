@@ -1,0 +1,30 @@
+.contenedor{
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    
+}
+
+.titulo {
+    padding-top: 20px;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+
+
+.precargar {
+    width: 80vw;
+    height: 70vh;
+    justify-content: center;
+    margin: 0px auto;
+    
+}
+
+.prueba{
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.842);
+}
+

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { createPokemon, getTypes } from "../Redux/Actions";
 import Nav from '../Nav/index.jsx'
-import Silueta from '../imagenes/picachu.jpg'
+import Silueta from '../imagenes/picachu.png'
 
 
 function validate(input) {
@@ -140,7 +140,10 @@ export default function CreatePokemon() {
     }
 
     const deleteType = () =>{
-        if(input.types.length){
+        if(input.types[0]){
+            input.types.shift()
+        }
+        else if(input.types[1]){
             input.types.pop()
         }
         setInput({
@@ -169,7 +172,7 @@ export default function CreatePokemon() {
             <form onSubmit={e => handleOnSumbit(e)}>
             
                 <div>
-                    <button type='button' onClick={() => deleteType()}>Delete Last Type Selected</button>
+                    {/* <button type='button' onClick={() => deleteType()}>Delete Last Type Selected</button> */}
                     {
                         typesState.map(e => {
                             return(
@@ -231,7 +234,15 @@ export default function CreatePokemon() {
                 <p>{input.speed}</p>
                 <p>{input.height}</p>
                 <p>{input.weight}</p>
-                <p>{input.types.join(' ')}</p>
+                {/* <p>{input.types.join(' ')}</p> */}
+                {
+                    input.types.map(e => {
+                        return(<div>
+                            <p>{e}</p>
+                            <button type="button" onClick={deleteType}>X</button>
+                        </div>)
+                    })
+                }
                 
                 <img src={input.img ? input.img : Silueta} alt='Rompiste todo' />
             </div>

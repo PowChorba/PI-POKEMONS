@@ -1,33 +1,89 @@
+
+
 .contenedor {
-    width: 50%;
+    width: 75%;
     margin: 0px auto;
+    height: 100%;
 }
-
-.cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.filtrados {
-    display: flex;
-    justify-content: space-evenly;
-    
-}
-
 
 .titulo {
     text-align: center;
+    color: #fff;
+    margin: 25px;
+    font-size: 40px;
 }
-
+/* GIF DE CARGA */
 .precargar {
-    text-align: center;
+    width: 80vw;
+    height: 70vh;
+    justify-content: center;
+    margin: 0px auto;
 }
 
+
+/* PAGINADO */
 .paginado {
     display: flex;
+    width: 50%;
+    margin: 0px auto;
     justify-content: center;
+    align-items: center;
 }
 
 .paginado2 {
     display: none;
+}
+.ocultobtn {
+    visibility: hidden;
+}
+
+.paginadobtn{
+    border: none;
+    border-radius: 10px;
+    background-color: #110634e8;
+    color: #fff;
+    padding: 10px 25px;
+    margin: 15px 15px;
+    cursor: pointer;
+}
+
+
+/*SELECTS*/
+.filtrados {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.sortDB{
+    background-color: #110634a2;
+    color: #fff;
+    border: none;
+    padding: 8px 25px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.sortDB:focus{
+    outline: 0;
+    border: none;
+}
+
+/* POKEMONS CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+.pokecards:hover{
+    width: 1000px;
+    height: 100px;
+}
+
+
+/* BACKGROUND LOADING */
+.carga {
+    background-color: rgba(0, 0, 0, 0.842);
 }

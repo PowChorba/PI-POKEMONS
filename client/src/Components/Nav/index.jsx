@@ -1,5 +1,5 @@
 import React from "react";
-import pokeball from '../imagenes/pokeball-nav.png'
+import pokeball from '../imagenes/nav.png'
 import s from './index.module.css'
 import {NavLink} from 'react-router-dom'
 

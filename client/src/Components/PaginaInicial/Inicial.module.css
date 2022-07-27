@@ -1,0 +1,21 @@
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../imagenes/inicio.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.asd {
+    width: 100px;
+    height: 100px;
+}
+
+.asd:hover{
+    transform: scale(130%);
+    transition: 1s;
+}

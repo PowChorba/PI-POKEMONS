@@ -1,0 +1,66 @@
+.contenedor {
+    margin: 0px auto;
+    width: 35%;
+    background-color: rgba(255, 255, 255, 0.616);
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.contenedor:hover{
+    background-color: #fff;
+    transition: 1s;
+}
+/* NOMBRE */
+.name {
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.name::first-letter{
+    text-transform: uppercase;
+}
+/* CARD */
+.card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+.types{
+    font-size: 26px;
+    margin: 10px;
+    grid-column: 1/3;
+}
+
+
+/* DETALLES */
+
+.texto {
+    font-size: 26px;
+    margin: 10px;
+}
+
+/* IMAGENES */
+.corazon {
+    width: 30px;
+    height: 30px;
+    
+}
+
+/* IMAGEN POKEMON */
+.pokemon {
+    width: 300px;
+    height: 225px;
+}
+
+/* BOTON */
+.btn{
+    margin-top: 15px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 20px;
+    background-color: #d13300;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+}

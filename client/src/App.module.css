@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+
+.contenedor {
+    background-color: rgba(0, 0, 0, 0.452);
+    background: url(./Components/imagenes/fondo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+

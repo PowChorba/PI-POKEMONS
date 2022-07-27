@@ -6,7 +6,7 @@ import PokemonCard from "../PokemonCard/index.jsx";
 import Gif from '../imagenes/pokeball.gif'
 import Search from "../Extras/Search.jsx";
 import { useState } from "react";
-import SiluetaCreate from '../imagenes/picachu.jpg'
+import SiluetaCreate from '../imagenes/picachu.png'
 import s from './Home.module.css'
 
 
@@ -64,6 +64,9 @@ export default function Home() {
     //FILTER BY CREATION
     const handleByCreation = (e) => {
         e.preventDefault()
+        if(!pokemons.length){
+            console.log('asdasdasdasd')
+        }
         dispatch(filterByCreaction(e.target.value))
         setPage(1)
         
@@ -79,21 +82,23 @@ export default function Home() {
 
 
     return (
-        <div>
+        <div className={pokemons.length === 0 ? s.carga : s}>
             <div>
                 <Nav/>
             </div>
+
             <div className={s.contenedor}>
+            <h1 className={s.titulo}>Home</h1>
                 <div className={s.filtrados}>
                 <div>
-                    <select onChange={e => handleByCreation(e)}>
+                    <select onChange={e => handleByCreation(e)} className={s.sortDB}>
                         <option value="allpokemons">All Pokemons</option>
                         <option value="apipokemons">Api Pokemons</option>
                         <option value="userpokemons">Created By Users</option>
                     </select>
                 </div>
                 <div>
-                    <select onChange={e => handleSortName(e)}>
+                    <select onChange={e => handleSortName(e)} className={s.sortDB}>
                         <option>Sort Name</option>
                         <option value="ascendente">A - Z</option>
                         <option value="descendente">Z - A</option>
@@ -106,14 +111,14 @@ export default function Home() {
                 />
                 </div>
                 <div>
-                    <select onChange={(e) => handleAttack(e)}>
+                    <select onChange={(e) => handleAttack(e)} className={s.sortDB}>
                         <option>Sort by Attack</option>
                         <option value="ascendente">Stronger</option>
                         <option value="descendente">Weaker</option>
                     </select>
                 </div>
                 <div>
-                    <select onChange={e => handleTypes(e)}>
+                    <select onChange={e => handleTypes(e)} className={s.sortDB}>
                         <option>Types</option>
                         <option value="normal">Normal</option>
                         <option value="fighting">Fighting</option>
@@ -138,11 +143,12 @@ export default function Home() {
                     </select>
                 </div>
                 </div>
-                <h1 className={s.titulo}>Home</h1>
+                
                 <div className={s.cards}>
                     {
                         typeof (pokemonsFiltrados) === 'object' && pokemonsFiltrados.map( e => {
                             return <PokemonCard
+                            className={s.pokecards}
                             key={e.id}
                             name={e.name}
                             types={e.types}
@@ -153,13 +159,13 @@ export default function Home() {
                             }
                         )
                     }
-                <div className={s.precargar}>{pokemonsFiltrados.length === 0 && <img className={s.precargar} src={Gif} alt='asd'/>}asd</div>
-                <div className={pokemonsFiltrados.length === 0 ? s.paginado2 : s.paginado}>
-                    <button onClick={handlePrev}>Prev</button>
-                    <p>{page} of {paginas}</p>
-                    <button onClick={handleNext}>Next</button>
-                </div> 
+                <div className={s.div}>{pokemonsFiltrados.length === 0 && <img src={Gif}  className={s.precargar} alt='asd'/>}</div>
             </div>   
+                <div className={pokemonsFiltrados.length === 0 ? s.paginado2 : s.paginado}>
+                    <button onClick={handlePrev} className={page === 1 ? s.ocultobtn : s.paginadobtn}>Prev</button>
+                    <p className={s.numeros}>{page} of {paginas}</p>
+                    <button onClick={handleNext} className={page === paginas ? s.ocultobtn : s.paginadobtn}>Next</button>
+                </div> 
             </div>
         </div>)
 }

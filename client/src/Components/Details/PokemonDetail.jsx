@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getPokemonDetails } from "../Redux/Actions";
 import CardComplete from './CardComplete.jsx'
-import Silueta from '../imagenes/picachu.jpg'
+import Silueta from '../imagenes/picachu.png'
+import Pokeball from '../imagenes/pokeball.gif'
+import s from './Details.module.css'
+
 
 export default function Details() {
     const dispatch = useDispatch()
@@ -15,11 +18,11 @@ export default function Details() {
     }, [dispatch, params.id])    
     
     return(
-        <div>
-            <h2>Pokemon Detail</h2>
+        <div className={s.contenedor}>
             {
                 typeof pokemonDetail[0] === 'object' && pokemonDetail[0].id == params.id ?
-                <div>
+                <div className={s.contenedorCard}>
+                    <h2 className={s.titulo}>Pokemon Detail</h2>
                     <CardComplete
                         name={pokemonDetail[0].name}
                         img={pokemonDetail[0].img ? pokemonDetail[0].img : Silueta}
@@ -33,12 +36,12 @@ export default function Details() {
                         
                         />
                 </div>
-                : <p>Loading...</p>
+                : <div className={s.prueba}></div>
             }
         </div>)
 }
 
-
+// <img src={Pokeball} alt='asd' className={s.precargar}/>
 
 
 

@@ -1,0 +1,31 @@
+.contenedor {
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.input {
+    border: none;
+    background-color: #110634a2;
+    border-radius: 15px;
+    text-align: center;
+    padding: 8px 25px;
+    color: #fff;
+    margin: 0px 10px;
+}
+
+.input:focus {
+    outline: 0;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    background-color: #110634a2;
+    color: #fff;
+    cursor: pointer;
+}

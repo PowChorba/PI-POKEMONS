@@ -89,10 +89,5 @@ export function createPokemon(pokemonData) {
     }
 }
 
-export function ad(data){
-    return {
-        type: CREATE_POKEMON,
-        payload: data
-    }
-}
+
 
