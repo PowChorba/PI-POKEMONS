@@ -23,7 +23,9 @@ export default function Details() {
                 typeof pokemonDetail[0] === 'object' && pokemonDetail[0].id == params.id ?
                 <div className={s.contenedorCard}>
                     <h2 className={s.titulo}>Pokemon Detail</h2>
+                    <p className={s.id}>ID: {pokemonDetail[0].id}</p>
                     <CardComplete
+                        
                         name={pokemonDetail[0].name}
                         img={pokemonDetail[0].img ? pokemonDetail[0].img : Silueta}
                         health={pokemonDetail[0].health}

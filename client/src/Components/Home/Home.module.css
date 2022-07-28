@@ -5,6 +5,11 @@
     margin: 0px auto;
     height: 100%;
 }
+.contenedor2 {
+    width: 75%;
+    margin: 0px auto;
+    height: 100vh;
+}
 
 .titulo {
     text-align: center;

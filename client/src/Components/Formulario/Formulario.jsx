@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { createPokemon, getTypes } from "../Redux/Actions";
 import Nav from '../Nav/index.jsx'
 import Silueta from '../imagenes/picachu.png'
-
+import s from './Formulario.module.css'
 
 function validate(input) {
     let error = {};
@@ -130,6 +130,9 @@ export default function CreatePokemon() {
     }
 
     const addType = (type) => {
+        // if(input.types.includes(type)){
+        //     for()
+        // }
         if(input.types){
             input.types.push(type)
         }
@@ -155,8 +158,8 @@ export default function CreatePokemon() {
 
     //PARA ACTIVAR EL BOTON Y PODER MANDAR EL FORMULARIO
     useEffect(() => {
-        if(!error.name && !error.health && !error.attack && !error.defense && !error.speed && !error.height && !error.weight && !error.types && !error.img
-          && input.name && input.health && input.attack && input.defense && input.speed && input.height && input.weight && (input.types.length > 0)){
+        if(!error.name && !error.health && !error.attack && !error.defense && !error.speed && !error.height && !error.weight && !error.img
+          && input.name && input.health && input.attack && input.defense && input.speed && input.height && input.weight){
             setBoton(false)
         }else {
             setBoton(true)
@@ -164,87 +167,115 @@ export default function CreatePokemon() {
     }, [error, input])
      
     return (
-        <div>
+        <div className={s.contenedor}>
             <div>
                 <Nav />
             </div>
-            <h2>Create Your Pokemon</h2>
-            <form onSubmit={e => handleOnSumbit(e)}>
-            
-                <div>
-                    {/* <button type='button' onClick={() => deleteType()}>Delete Last Type Selected</button> */}
+            <h2 className={s.titulo}>Create Your Pokemon</h2>
+            <div className={s.contiene}>
+                <form onSubmit={e => handleOnSumbit(e)} className={s.formulario}>
+                
+                    <div className={s.types}>
+                        {/* <button type='button' onClick={() => deleteType()}>Delete Last Type Selected</button> */}
+                        <p className={s.asd}>Select Types:</p>
+                        {
+                            typesState.map(e => {
+                                return(
+                                    <button type='button' key={e.id} value={e.name}onClick={() => addType(e.name)} disabled={!btnTypes} defaultValue='normal' className={btnTypes ? s.btnTypes : s.btnTypes2}>{e.name}</button>
+                                ) 
+                            })
+                        }
+                        {/* {error.types && <p className={s.error}>{error.types}</p>} */}
+                    </div>
+                    <div className={s.divsForm}>
+                        <label className={s.label}>Name: </label>
+                        <input type="text" name="name" value={input.name} onChange={handleOnChange} className={s.input}/>
+                        {error.name && <p className={s.error}>{error.name}</p>}
+                    </div>
+                    <div className={s.divsForm}>
+                        <label className={s.label}>Health: </label>
+                        <input type="number" name='health' value={input.health} onChange={handleOnChange}  className={s.input} placeholder='Min 10 - Max 150'/>
+                        {error.health && <p className={s.error}>{error.health}</p>}
+                    </div>
+                    <div className={s.divsForm}>
+                        <label className={s.label}>Attack: </label>
+                        <input type="number" name='attack' value={input.attack} onChange={handleOnChange}  className={s.input} placeholder='Min 10 - Max 150'/>
+                        {error.attack && <p className={s.error}>{error.attack}</p>}
+                    </div>
+                    <div className={s.divsForm}>
+                        <label className={s.label}>Defense: </label>
+                        <input type="number" name='defense' value={input.defense} onChange={handleOnChange}  className={s.input} placeholder='Min 10 - Max 150'/>
+                        {error.defense && <p className={s.error}>{error.defense}</p>}
+                    </div>
+                    <div className={s.divsForm}>
+                        <label className={s.label}>Speed: </label>
+                        <input type="number" name='speed' value={input.speed} onChange={handleOnChange}  className={s.input} placeholder='Min 10 - Max 150'/>
+                        {error.speed && <p className={s.error}>{error.speed}</p>}
+                    </div>
+                    <div className={s.divsForm}>
+                        <label className={s.label}>Height: </label>
+                        <input type="number" name='height' value={input.height} onChange={handleOnChange}  className={s.input} placeholder='Min 1 cm - Max 30 cm'/>
+                        {error.height && <p className={s.error}>{error.height}</p>}
+                    </div>
+                    <div className={s.divsForm}>
+                        <label className={s.label}>Weight: </label>
+                        <input type="number" name='weight' value={input.weight} onChange={handleOnChange}  className={s.input} placeholder='Min 10kg - Max 1500kg'/>
+                        {error.weight && <p className={s.error}>{error.weight}</p>}
+                    </div>
+                    <div className={s.divsForm}>
+                        <label className={s.label}>IMG: </label>
+                        <input type="text" name='img' value={input.img} onChange={handleOnChange} placeholder='Imagen HTTP' className={s.input} /> 
+                        {error.img && <p className={s.error}>{error.img}</p>}
+                    </div>
+                    <div className={s.divBtn}>
+                        <button type="submit" disabled={boton} className={!boton ? s.btn : s.btn2}>Create Pokemon</button>
+                    </div>
+                </form>
+                <div className={s.espejo}>
+                    <div className={s.divsEspejoName}>
+                        <p className={s.texto}>Name:</p>
+                        <span className={s.spanName}>{input.name}</span>
+                    </div>
+                    <div className={s.divsEspejo}>
+                        <p className={s.texto}>Health:</p>
+                        <span>{input.health}</span>
+                    </div>
+                    <div className={s.divsEspejo}>
+                        <p className={s.texto}>Attack:</p>
+                        <span>{input.attack}</span>
+                    </div>
+                    <div className={s.divsEspejo}>
+                        <p className={s.texto}>Defense:</p>
+                        <span>{input.defense}</span>
+                    </div>
+                    <div className={s.divsEspejo}>
+                        <p className={s.texto}>Speed:</p>
+                        <span>{input.speed}</span>
+                    </div>
+                    <div className={s.divsEspejo}>
+                        <p className={s.texto}>Height:</p>
+                        <span>{input.height} cm</span>
+                    </div>
+                    <div className={s.divsEspejo}>
+                        <p className={s.texto}>Weight:</p>
+                        <span>{input.weight} kg</span>
+                    </div>
+                    {/* <p>{input.types.join(' ')}</p> */}
+                    <div className={s.divEspejoTypes}>
                     {
-                        typesState.map(e => {
-                            return(
-                                <button type='button' key={e.id} onClick={() => addType(e.name)} disabled={!btnTypes} defaultValue='normal'>{e.name}</button>
-                            ) 
+                        input.types.map(e => {
+                            return(<div key={e} className={s.typesMap}>
+                                <p className={s.typesText}>{e}</p>
+                                <button type="button" onClick={deleteType} className={s.typesBtn}>X</button>
+                            </div>)
                         })
                     }
-                    {error.types && <p>{error.types}</p>}
+                    </div>
+                    
+                    <div className={s.divsEspejoImg}>
+                        <img src={input.img ? input.img : Silueta} alt='Rompiste todo' className={s.silueta}/>
+                    </div>
                 </div>
-                <div>
-                    <label>Name: </label>
-                    <input type="text" name="name" value={input.name} onChange={handleOnChange}/>
-                    {error.name && <p>{error.name}</p>}
-                </div>
-                <div>
-                    <label>Health: </label>
-                    <input type="number" name='health' value={input.health} onChange={handleOnChange} />
-                    {error.health && <p>{error.health}</p>}
-                </div>
-                <div>
-                    <label>Attack: </label>
-                    <input type="number" name='attack' value={input.attack} onChange={handleOnChange} />
-                    {error.attack && <p>{error.attack}</p>}
-                </div>
-                <div>
-                    <label>Defense: </label>
-                    <input type="number" name='defense' value={input.defense} onChange={handleOnChange} />
-                    {error.defense && <p>{error.defense}</p>}
-                </div>
-                <div>
-                    <label>Speed: </label>
-                    <input type="number" name='speed' value={input.speed} onChange={handleOnChange} />
-                    {error.speed && <p>{error.speed}</p>}
-                </div>
-                <div>
-                    <label>Height: </label>
-                    <input type="number" name='height' value={input.height} onChange={handleOnChange} />
-                    {error.height && <p>{error.height}</p>}
-                </div>
-                <div>
-                    <label>Weight: </label>
-                    <input type="number" name='weight' value={input.weight} onChange={handleOnChange} />
-                    {error.weight && <p>{error.weight}</p>}
-                </div>
-                <div>
-                    <label>IMG: </label>
-                    <input type="text" name='img' value={input.img} onChange={handleOnChange} placeholder='Imagen HTTP'/> 
-                    {error.img && <p>{error.img}</p>}
-                </div>
-                <div>
-                    <button type="submit" disabled={boton} >Create Pokemon</button>
-                </div>
-            </form>
-            <div>
-                <p>{input.name}</p>
-                <p>{input.health}</p>
-                <p>{input.attack}</p>
-                <p>{input.defense}</p>
-                <p>{input.speed}</p>
-                <p>{input.height}</p>
-                <p>{input.weight}</p>
-                {/* <p>{input.types.join(' ')}</p> */}
-                {
-                    input.types.map(e => {
-                        return(<div>
-                            <p>{e}</p>
-                            <button type="button" onClick={deleteType}>X</button>
-                        </div>)
-                    })
-                }
-                
-                <img src={input.img ? input.img : Silueta} alt='Rompiste todo' />
-            </div>
+            </div>    
         </div>)
 }

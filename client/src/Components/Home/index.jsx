@@ -64,9 +64,6 @@ export default function Home() {
     //FILTER BY CREATION
     const handleByCreation = (e) => {
         e.preventDefault()
-        if(!pokemons.length){
-            console.log('asdasdasdasd')
-        }
         dispatch(filterByCreaction(e.target.value))
         setPage(1)
         
@@ -87,38 +84,36 @@ export default function Home() {
                 <Nav/>
             </div>
 
-            <div className={s.contenedor}>
+            <div className={pokemonsFiltrados.length > 1 ? s.contenedor : s.contenedor2}>
+            
             <h1 className={s.titulo}>Home</h1>
                 <div className={s.filtrados}>
                 <div>
-                    <select onChange={e => handleByCreation(e)} className={s.sortDB}>
+                    <select onChange={e => handleByCreation(e)} className={s.sortDB} disabled={pokemons.length ? false : true}>
                         <option value="allpokemons">All Pokemons</option>
                         <option value="apipokemons">Api Pokemons</option>
                         <option value="userpokemons">Created By Users</option>
                     </select>
                 </div>
                 <div>
-                    <select onChange={e => handleSortName(e)} className={s.sortDB}>
+                    <select onChange={e => handleSortName(e)} className={s.sortDB} disabled={pokemons.length ? false : true}>
                         <option>Sort Name</option>
                         <option value="ascendente">A - Z</option>
                         <option value="descendente">Z - A</option>
                     </select>
                 </div>
                 <div>
-                <Search
-                page={page}
-                setPage={setPage}
-                />
+                <Search/>
                 </div>
                 <div>
-                    <select onChange={(e) => handleAttack(e)} className={s.sortDB}>
+                    <select onChange={(e) => handleAttack(e)} className={s.sortDB} disabled={pokemons.length ? false : true}>
                         <option>Sort by Attack</option>
                         <option value="ascendente">Stronger</option>
                         <option value="descendente">Weaker</option>
                     </select>
                 </div>
                 <div>
-                    <select onChange={e => handleTypes(e)} className={s.sortDB}>
+                    <select onChange={e => handleTypes(e)} className={s.sortDB} disabled={pokemons.length ? false : true}>
                         <option>Types</option>
                         <option value="normal">Normal</option>
                         <option value="fighting">Fighting</option>
@@ -160,7 +155,8 @@ export default function Home() {
                         )
                     }
                 <div className={s.div}>{pokemonsFiltrados.length === 0 && <img src={Gif}  className={s.precargar} alt='asd'/>}</div>
-            </div>   
+            </div>
+               
                 <div className={pokemonsFiltrados.length === 0 ? s.paginado2 : s.paginado}>
                     <button onClick={handlePrev} className={page === 1 ? s.ocultobtn : s.paginadobtn}>Prev</button>
                     <p className={s.numeros}>{page} of {paginas}</p>

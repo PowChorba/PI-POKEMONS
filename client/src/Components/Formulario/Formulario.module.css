@@ -1,0 +1,197 @@
+.contenedor {
+    text-align: center;
+    height: 100%;
+}
+/* TITULO */
+.titulo {
+    font-size: 36px;
+    text-align: center;
+    margin: 25px;
+    color: #fff;
+}
+
+
+/*CONTIENE*/
+.contiene{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+}
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 25px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.548);
+}
+.types {
+    grid-column: 1/3;
+}
+
+/* BTN TYPES */
+.btnTypes {
+    border:none;
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #110634e8;
+    color: #fff;
+    
+}
+
+.btnTypes::first-letter{
+    text-transform: uppercase;
+}
+
+/*BTN TYPES DISABLED*/
+.btnTypes2 {
+    border:none;
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #11063459;
+    color: #fff;
+}
+
+.btnTypes2::first-letter{
+    text-transform: uppercase;
+}
+
+.asd{
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+
+
+/* INPUTS */
+.input{
+    text-align: center;
+    border: none;
+    background:none;
+    border-bottom: 2px solid black;
+    margin: 15px;
+    padding: 5px 15px;
+    font-size: 16px;
+}
+
+.input:focus{
+    outline: 0;
+    background: none;
+}
+/* LABELS */
+.divsForm {
+    margin: 10px;
+}
+.label {
+    display: block;
+}
+
+/* BTN */
+.divBtn{
+    margin-top: 15px;
+    grid-column: 1/3;
+
+}
+
+.btn{
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #110634e8;
+    color: #fff;
+}
+
+.btn2 {
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #11063459;
+    color: #fff;
+}
+
+/* ERROR */
+.error{
+    margin: 10px;
+    color: red;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+
+/* ESPEJO */
+
+.espejo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    margin-left: 15px;
+    background-color: rgba(255, 255, 255, 0.548);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* DIVS ESPEJO */
+
+.divsEspejo{
+    margin: 20px;
+}
+
+.divsEspejoName{
+    grid-column: 1/3;
+}
+
+.divsEspejoImg{
+    grid-column: 1/3;
+}
+
+.divEspejoTypes {
+    grid-column: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* TYPES DENTRO DEL MAP */
+.typesMap{
+    display: flex;
+    margin-left: 15px;
+}
+.typesText{
+    margin: 5px;
+    font-size: 20px;
+}
+.typesText::first-letter{
+    text-transform: uppercase;
+}
+
+.typesBtn{
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #110634e8;
+    color: #fff;
+}
+/* TEXTO ESPEJO */
+
+.texto {
+    margin: 15px;
+    font-size: 20px;
+}
+
+.spanName::first-letter{
+    color: white;
+}
+
+.silueta {
+    width: 250px;
+    height: 250px;
+}

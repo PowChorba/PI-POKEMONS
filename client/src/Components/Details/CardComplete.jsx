@@ -13,7 +13,7 @@ import Altura from '../imagenes/altura.png'
 
 
 
-export default function CardComplete({name,img,health,attack,defense,speed,height,weight,types}){
+export default function CardComplete({id,name,img,health,attack,defense,speed,height,weight,types}){
     return (
         <div className={s.contenedor}>
             <h1 className={s.name}>{name}</h1>
