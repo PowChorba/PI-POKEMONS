@@ -8,10 +8,10 @@
 }
 
 .contenedor:hover {
-    transform: scale(150%);
+    transform: scale(115%);
     background-color: #fff;
     border-radius: 0px;
-    transition: 0.8s ease-in-out;
+    transition: 0.6s ease;
 }
 
 .name {
