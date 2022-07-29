@@ -41,3 +41,7 @@
 .btn:hover{
     background-color: #d13300;
 }
+
+.types {
+    text-transform: capitalize;
+}

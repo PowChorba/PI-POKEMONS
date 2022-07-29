@@ -1,5 +1,3 @@
-
-
 .contenedor {
     width: 75%;
     margin: 0px auto;
@@ -8,7 +6,7 @@
 .contenedor2 {
     width: 75%;
     margin: 0px auto;
-    height: 100vh;
+    height: 100%;
 }
 
 .titulo {
@@ -18,11 +16,15 @@
     font-size: 40px;
 }
 /* GIF DE CARGA */
+.div {
+    margin-left: 30%;
+    height: 100vh;
+}
 .precargar {
-    width: 80vw;
-    height: 70vh;
-    justify-content: center;
-    margin: 0px auto;
+    width: 50vw;
+    
+    
+   
 }
 
 
@@ -91,4 +93,20 @@
 /* BACKGROUND LOADING */
 .carga {
     background-color: rgba(0, 0, 0, 0.842);
+}
+/*SEARCH ERROR*/
+.falseDiv{
+    grid-column: 1/3;
+    width: 100%;
+    height: 90vh;
+    margin: 150px auto;
+}
+
+.false {
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    background-color: #110634ce;
+    border-radius: 25px;
 }

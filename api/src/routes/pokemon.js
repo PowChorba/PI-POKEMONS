@@ -11,11 +11,13 @@ router.get('/', async (req,res) => {
         const allPokemons = await allPokemonsData()
         const filtrarPokemons = allPokemons.filter(p => p.name.toLowerCase() === name.toLowerCase())
         if(filtrarPokemons.length === 0){
-            return res.send('We couldn`t find a Pokemon with that name')
+            res.send('We couldn`t find a Pokemon with that name')
+            
         } else {
             return res.status(200).json(filtrarPokemons)
         }
-    }else {
+    }
+    else {
         const noFilterPokemons = await allPokemonsData()
         return res.status(200).json(noFilterPokemons)
    }
@@ -47,8 +49,8 @@ router.post('/', async (req,res, next) => {
         
        res.status(201).json(nuevoPokemon)
     } catch (error) {
-        next(console.log('esta entrando aca'))
-        // next(error)
+        // next(console.log('esta entrando aca'))
+        next(error)
         
     }
 })

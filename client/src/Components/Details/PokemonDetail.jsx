@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { getPokemonDetails } from "../Redux/Actions";
 import CardComplete from './CardComplete.jsx'
 import Silueta from '../imagenes/picachu.png'
-import Pokeball from '../imagenes/pokeball.gif'
+import pokeball from '../imagenes/asd.gif'
 import s from './Details.module.css'
 
 
@@ -38,8 +38,9 @@ export default function Details() {
                         
                         />
                 </div>
-                : <div className={s.prueba}></div>
+                : <div className={s.prueba}><img src={pokeball} alt="asd" /></div>
             }
+            
         </div>)
 }
 

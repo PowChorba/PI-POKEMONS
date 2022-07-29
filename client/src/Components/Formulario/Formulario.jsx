@@ -45,12 +45,12 @@ function validate(input) {
     else if(input.weight < 10) error.weight = 'El peso no puede ser inferior a 10kg'
     
     //ERROR TYPES
-    else if(!input.types) error.types = 'Debes ingresar al menos un valor'
-    else if(input.types < 1) error.types = 'El Pokemon debe tener al menos un Type'
-    else if(input.types > 2) error.types = 'El Pokemon no puede tener mas de dos Types'
+    // else if(!input.types) error.types = 'Debes ingresar al menos un valor'
+    // else if(input.types < 1) error.types = 'El Pokemon debe tener al menos un Type'
+    // else if(input.types > 2) error.types = 'El Pokemon no puede tener mas de dos Types'
     // ERROR IMG
+    if(input.img.length > 255) error.img = 'La URL supera los 255 caracteres'
     else if(input.img && !/[(http(s)?):/(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/.test(input.img)) error.img = 'La imagen debe ser HTTP'
-
     return error
 }
 
@@ -77,7 +77,7 @@ export default function CreatePokemon() {
         img: ''
         
     })
-    
+    console.log(input.img.length)
 
     //PARA TRAER LOS TYPES DE DB
     useEffect(() => {
@@ -165,7 +165,7 @@ export default function CreatePokemon() {
             setBoton(true)
         }
     }, [error, input])
-     
+    
     return (
         <div className={s.contenedor}>
             <div>
@@ -248,7 +248,7 @@ export default function CreatePokemon() {
                         <p className={s.texto}>Defense:</p>
                         <span>{input.defense}</span>
                     </div>
-                    <div className={s.divsEspejo}>
+                    <div className={s.divsEspejo}> 
                         <p className={s.texto}>Speed:</p>
                         <span>{input.speed}</span>
                     </div>

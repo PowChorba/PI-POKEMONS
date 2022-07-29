@@ -13,16 +13,15 @@ import s from './Home.module.css'
 export default function Home() {
     const dispatch = useDispatch()
     const pokemons = useSelector(state => state.filter)
-    
+        
     //PARA MANEJAR EL PAGINADO
-    const paginas = Math.ceil(pokemons.length / 12)
+    const paginas = Math.ceil(pokemons.length / 12) 
     const [page, setPage] = useState(1)
-    const pokemonsPerPage = 12
+    const [pokemonsPerPage] = useState(12)
     const ultima = page * pokemonsPerPage
     const primera = ultima - pokemonsPerPage
     const pokemonsFiltrados = pokemons.slice(primera, ultima)
-    console.log(pokemons)
-    //PAGINADO
+    
     const handlePrev = () => {
         setPage(page - 1)
         if(page < 2){
@@ -141,22 +140,29 @@ export default function Home() {
                 
                 <div className={s.cards}>
                     {
-                        typeof (pokemonsFiltrados) === 'object' && pokemonsFiltrados.map( e => {
-                            return <PokemonCard
-                            className={s.pokecards}
-                            key={e.id}
-                            name={e.name}
-                            types={e.types}
-                            img={e.img ? e.img : SiluetaCreate}
-                            id={e.id}
-                            />
-
-                            }
-                        )
+                        pokemons[0] === 'Vacio' ? <div className={s.falseDiv}><p className={s.false}>We couldn`t find Pokemon`s in DataBase</p></div> 
+                        : 
+                            typeof (pokemonsFiltrados) === 'object' && pokemonsFiltrados.map( e => {
+                                return <PokemonCard
+                                className={s.pokecards}
+                                key={e.id}
+                                name={e.name}
+                                types={e.types}
+                                img={e.img ? e.img : SiluetaCreate}
+                                id={e.id}
+                                />
+    
+                                }
+                            )
+                        
                     }
-                <div className={s.div}>{pokemonsFiltrados.length === 0 && <img src={Gif}  className={s.precargar} alt='asd'/>}</div>
-            </div>
-               
+                {pokemonsFiltrados.length === 0 && <div className={s.div}><img src={Gif}  className={s.precargar} alt='asd'/></div>}
+                </div>
+                <div>
+                    {
+                        pokemons === 'We couldn`t find a Pokemon with that name' && <div className={s.falseDiv}><p className={s.false}>We couldn`t find a Pokemon with that name</p></div>
+                    }
+                </div>
                 <div className={pokemonsFiltrados.length === 0 ? s.paginado2 : s.paginado}>
                     <button onClick={handlePrev} className={page === 1 ? s.ocultobtn : s.paginadobtn}>Prev</button>
                     <p className={s.numeros}>{page} of {paginas}</p>

@@ -18,8 +18,8 @@ const initialState = {
     sortByName: [],
     pokemonDetail: [],
     createPokemon: [],
-    pokemonsType: []
-    
+    pokemonsType: [],
+    asd: []
 }
 
 export default function reducer(state = initialState, action){
@@ -31,7 +31,7 @@ export default function reducer(state = initialState, action){
                 filter: action.payload,
                 searchByType: action.payload,
                 sortByName: action.payload,
-                
+                asd: action.payload
                 
                 
             }
@@ -76,6 +76,9 @@ export default function reducer(state = initialState, action){
             }
             else if(action.payload === 'userpokemons'){
                 arrayFilter = allPokemonsDB.filter(p => typeof p.id === 'string')
+                if(arrayFilter.length === 0){
+                    arrayFilter = ['Vacio']
+                }
             }
             else if(action.payload === 'allpokemons'){
                 arrayFilter = state.pokemons
@@ -83,7 +86,7 @@ export default function reducer(state = initialState, action){
                       
             return {
                 ...state,
-                filter: arrayFilter
+                filter: arrayFilter 
             }
         case FILTER_BY_ATTACK: 
             let pokemonsAttack = [...state.filter]

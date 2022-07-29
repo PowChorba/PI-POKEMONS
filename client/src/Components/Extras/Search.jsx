@@ -11,14 +11,14 @@ export default function Search(){
     const handleSearch = (e) => {
         setSearch(e.target.value)
     }
-
+    
     const searchName = (e) => {
         e.preventDefault()
         dispatch(getPokemonByName(search))
         
         
     }
-
+    
     return (
         <div className={s.contenedor}>
             <form  onSubmit={searchName}>
