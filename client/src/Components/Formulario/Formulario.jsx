@@ -77,7 +77,8 @@ export default function CreatePokemon() {
         img: ''
         
     })
-    console.log(input.img.length)
+    
+    
 
     //PARA TRAER LOS TYPES DE DB
     useEffect(() => {
@@ -130,9 +131,7 @@ export default function CreatePokemon() {
     }
 
     const addType = (type) => {
-        // if(input.types.includes(type)){
-        //     for()
-        // }
+        
         if(input.types){
             input.types.push(type)
         }
@@ -143,18 +142,19 @@ export default function CreatePokemon() {
     }
 
     const deleteType = () =>{
-        if(input.types[0]){
-            input.types.shift()
-        }
-        else if(input.types[1]){
+        // if(input.types[0]){
+        //     input.types.shift()
+        // }
+        if(input.types){
             input.types.pop()
         }
         setInput({
             ...input,
             types: input.types
         })
+        
     }
-    console.log(input)
+    
 
     //PARA ACTIVAR EL BOTON Y PODER MANDAR EL FORMULARIO
     useEffect(() => {
@@ -266,10 +266,10 @@ export default function CreatePokemon() {
                         input.types.map(e => {
                             return(<div key={e} className={s.typesMap}>
                                 <p className={s.typesText}>{e}</p>
-                                <button type="button" onClick={deleteType} className={s.typesBtn}>X</button>
                             </div>)
                         })
                     }
+                    <button type="button" onClick={deleteType} className={input.types.length ? s.typesBtn : s.typeBtn} disabled={input.types.length ? false : true} >X</button>
                     </div>
                     
                     <div className={s.divsEspejoImg}>
