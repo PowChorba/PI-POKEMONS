@@ -16,31 +16,37 @@ function validate(input) {
     
     //ERROR HEALTH
     else if(!input.health) error.health = 'Debes ingresar un valor'
+    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.health)) error.health ='Debes ingresar un numero entero'
     else if(input.health  > 150) error.health = 'La vida  no puede ser superior a 150'
     else if(input.health < 10) error.health = 'La vida  no puede ser inferior a 10'
     
     //ERROR ATTACK
     else if(!input.attack) error.attack = 'Debes ingresar un valor'
+    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.attack)) error.attack ='Debes ingresar un numero entero'
     else if(input.attack > 150) error.attack = 'El ataque no puede ser superior a 150'
     else if(input.attack < 10) error.attack = 'El ataque no puede ser inferior a 10'
     
     //ERROR DEFENSE
     else if(!input.defense) error.defense = 'Debes ingresar un valor'
+    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.defense)) error.defense ='Debes ingresar un numero entero'
     else if(input.defense > 150) error.defense = 'La defensa no puede ser superior 150'
     else if(input.defense < 10) error.defense = 'La defensa no puede ser inferior a 10'
     
     //ERROR SPEED
     else if(!input.speed) error.speed = 'Debes ingresar un valor'
+    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.speed)) error.speed ='Debes ingresar un numero entero'
     else if(input.speed > 150) error.speed = 'La velocidad no puede ser superior a 150'
     else if(input.speed < 10) error.speed = 'La velocidad no puede ser inferior a 10'
     
      //ERROR HEIGHT
     else if(!input.height) error.height = 'Debes ingresar un valor'
+    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.height)) error.height ='Debes ingresar un numero entero'
     else if(input.height > 30) error.height = 'La altura no puede ser superior a 30'
     else if(input.height < 1) error.height = 'La altura no puede ser inferior a 1'
     
     //ERROR WEIGHT
     else if(!input.weight) error.weight = 'Debes ingresar un valor'
+    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.weight)) error.weight ='Debes ingresar un numero entero'
     else if(input.weight > 1500) error.weight = 'El peso no puede ser superior a 1500kg'
     else if(input.weight < 10) error.weight = 'El peso no puede ser inferior a 10kg'
     
