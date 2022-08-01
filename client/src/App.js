@@ -5,7 +5,11 @@ import Welcome from './Components/PaginaInicial/index.jsx'
 import Details from './Components/Details/PokemonDetail.jsx';
 import CreatePokemon from './Components/Formulario/Formulario.jsx';
 import s from './App.module.css'
+import dotenv from 'dotenv'
+import axios from 'axios';
+dotenv.config()
 
+axios.defaults.baseURL= process.env.REACT_APP_API || 'http://localhost:3001'
 
 function App() {
   return (

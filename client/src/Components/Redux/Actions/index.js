@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { routePokemon, filterByName,filterByType, postPokemon } from '../../Constantes'
+
 
 export const POKEMONS_DATA = 'POKEMONS_DATA'
 export const SEARCH_NAME = 'SEARCH_NAME'
@@ -13,7 +13,7 @@ export const CREATE_POKEMON = 'CREATE_POKEMON'
 
 export function getPokemons(){
     return function(dispatch){
-        axios.get(routePokemon)
+        axios.get('/pokemon/')
         .then(detalle => dispatch({
             type: POKEMONS_DATA,
             payload: detalle.data
@@ -23,7 +23,7 @@ export function getPokemons(){
 
 export function getPokemonByName(name){
     return async function (dispatch){
-        await axios.get(filterByName + name)
+        await axios.get(`/pokemon/?name=${name}`)
         .then(detalle => dispatch({
             type: SEARCH_NAME,
             payload: detalle.data
@@ -33,7 +33,7 @@ export function getPokemonByName(name){
 
 export function getTypes(){
     return async function(dispatch){
-        await axios.get(filterByType)
+        await axios.get('/type/')
         .then(detalle => dispatch({
             type: GET_TYPE,
             payload: detalle.data
@@ -71,7 +71,7 @@ export function filterByAttack(data) {
 
 export function getPokemonDetails(id) {
     return function  (dispatch){
-        axios.get(routePokemon + id)
+        axios.get(`/pokemon/${id}`)
         .then(detalle => dispatch({
             type: POKEMON_DETAIL,
             payload: detalle.data
@@ -81,7 +81,7 @@ export function getPokemonDetails(id) {
 
 export function createPokemon(pokemonData) {
     return async function (dispatch){
-         await axios.post(postPokemon, pokemonData)
+         await axios.post('/pokemon/', pokemonData)
         .then(detalle => dispatch({
             type: CREATE_POKEMON,
             payload: detalle.data

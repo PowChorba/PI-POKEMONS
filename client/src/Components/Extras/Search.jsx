@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { getPokemonByName} from "../Redux/Actions";
 import s from './Search.module.css'
 
-export default function Search(){
+export default function Search({setPage}){
     const dispatch = useDispatch()
     const [search, setSearch] = useState('')
     
@@ -15,7 +15,7 @@ export default function Search(){
     const searchName = (e) => {
         e.preventDefault()
         dispatch(getPokemonByName(search))
-        
+        setPage(1)
         
     }
     

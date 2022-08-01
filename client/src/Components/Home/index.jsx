@@ -102,7 +102,9 @@ export default function Home() {
                     </select>
                 </div>
                 <div>
-                <Search/>
+                <Search
+                setPage={setPage}
+                />
                 </div>
                 <div>
                     <select onChange={(e) => handleAttack(e)} className={s.sortDB} disabled={pokemons.length ? false : true}>
