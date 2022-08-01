@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { Pokemon, Type } = require('../db.js');
 const router = Router();
-const {allPokemonsData} = require('../utils/utils.js')
+const {allPokemonsData, apiPokemonsData} = require('../utils/utils.js')
 
 router.get('/', async (req,res) => {
    const { name } = req.query
@@ -28,9 +28,16 @@ router.get('/', async (req,res) => {
 
 router.post('/', async (req,res, next) => {
     try {
-        // let newPokemon = []
         const {name,health,attack,defense, speed,height,weight,img} = req.body
-        if(!name) return res.status(400).send('Debes asignar un nombre al pokemon')
+        if(!name) return res.status(400).send('You must enter a name')
+        const apiNames = await apiPokemonsData()
+        // console.log(apiNames.name)
+        const searchFilter = apiNames.filter(e => e.name === name)
+        // console.log(searchFilter)
+        if(searchFilter[0]){
+            res.send('This name already exist')
+        }else{
+          
         const nuevoPokemon = await Pokemon.create({
             name,
             health,
@@ -41,13 +48,14 @@ router.post('/', async (req,res, next) => {
             weight,
             img,
         })
+
         let dbTypes = await Type.findAll({
             where: { name: req.body.types },                     // MODIFICAR ESTO PARA QUE NO TIRE UNDEFINED
         })
         
         await nuevoPokemon.addType(dbTypes)
-        
-       res.status(201).json(nuevoPokemon)
+        res.status(201).json(nuevoPokemon)
+        }
     } catch (error) {
         // next(console.log('esta entrando aca'))
         next(error)

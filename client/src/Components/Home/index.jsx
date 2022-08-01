@@ -13,7 +13,7 @@ import s from './Home.module.css'
 export default function Home() {
     const dispatch = useDispatch()
     const pokemons = useSelector(state => state.filter)
-        
+    
     //PARA MANEJAR EL PAGINADO
     const paginas = Math.ceil(pokemons.length / 12) 
     const [page, setPage] = useState(1)

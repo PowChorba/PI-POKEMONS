@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
-import { createPokemon, getTypes } from "../Redux/Actions";
+import { createPokemon, getPokemons, getTypes } from "../Redux/Actions";
 import Nav from '../Nav/index.jsx'
 import Silueta from '../imagenes/picachu.png'
 import s from './Formulario.module.css'
 
-function validate(input) {
+export function validate(input) {
     let error = {};
-    // const imagen = /[(http(s)?):/(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
+    
     //ERROR NAME
     if(!input.name) error.name = 'Debes ingresar un nombre valido'
     else if(!/^[a-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(input.name)) error.name = 'El nombre no puede contener mayusculas/numeros/caracteres especiales'
@@ -54,6 +54,7 @@ function validate(input) {
     // else if(!input.types) error.types = 'Debes ingresar al menos un valor'
     // else if(input.types < 1) error.types = 'El Pokemon debe tener al menos un Type'
     // else if(input.types > 2) error.types = 'El Pokemon no puede tener mas de dos Types'
+    
     // ERROR IMG
     if(input.img.length > 255) error.img = 'La URL supera los 255 caracteres'
     else if(input.img && !/[(http(s)?):/(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/.test(input.img)) error.img = 'La imagen debe ser HTTP'
@@ -66,7 +67,6 @@ export default function CreatePokemon() {
     const typesState = useSelector(state => state.pokemonsType)
     const [boton, setBoton] = useState(true)
     const [btnTypes, setBtnTypes] = useState(true)
-    
     
     //MANEJO DE ERRORES
     const [error, setError] = useState('')
@@ -85,7 +85,9 @@ export default function CreatePokemon() {
     })
     
     
-
+    useEffect(() => {
+        dispatch(getPokemons())
+    }, [dispatch])
     //PARA TRAER LOS TYPES DE DB
     useEffect(() => {
         dispatch(getTypes())
@@ -119,6 +121,7 @@ export default function CreatePokemon() {
         if(input.types.length === 0){
             input.types.push('normal')
         }
+        
         dispatch(createPokemon(input))
         alert('Pokemon creado correctamente')
         setInput({

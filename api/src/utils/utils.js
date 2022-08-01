@@ -8,7 +8,7 @@ const apiPokemonsData = async () => {
         let apiPokemonsB = await axios.get(apiPokemons.data.next)
         const apiPokemonsFull = apiPokemons.data.results.concat(apiPokemonsB.data.results)
         const apiUrlPokemons = apiPokemonsFull.map(data => axios.get(data.url))
-        let apiPokemonsFinal = axios.all(apiUrlPokemons).then( p => {
+        let apiPokemonsFinal = Promise.all(apiUrlPokemons).then( p => {
             p.map(e => {
                 arrayPokemons.push({
                     id: e.data.id,
