@@ -10,6 +10,8 @@ export const FILTER_BY_DATA = 'FILTER_BY_DATA'
 export const FILTER_BY_ATTACK = 'FILTER_BY_ATTACK'
 export const POKEMON_DETAIL = 'POKEMON_DETAIL'
 export const CREATE_POKEMON = 'CREATE_POKEMON'
+export const BOTON = 'BOTON'
+
 
 export function getPokemons(){
     return function(dispatch){
@@ -86,6 +88,13 @@ export function createPokemon(pokemonData) {
             type: CREATE_POKEMON,
             payload: detalle.data
         }))
+    }
+}
+
+export function boton(data) {
+    return {
+        type: BOTON,
+        payload: data
     }
 }
 

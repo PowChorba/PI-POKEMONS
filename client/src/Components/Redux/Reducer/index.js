@@ -7,7 +7,8 @@ import {
     FILTER_BY_ATTACK, 
     POKEMON_DETAIL,
     CREATE_POKEMON,
-    GET_TYPE} 
+    GET_TYPE,
+    BOTON} 
 from '../Actions/index.js'
 
 
@@ -123,7 +124,14 @@ export default function reducer(state = initialState, action){
             return {
                 ...state,
                 pokemonsType: action.payload
-            }      
+            }
+        case BOTON:
+            const pokemons = [...state.filter]
+            const boton = pokemons.filter(e => e.attack >= 60 && e.attack <= 120 && e.height >= 15)
+            return {
+                ...state,
+                filter: boton
+            }          
         default: return state     
     }
 }

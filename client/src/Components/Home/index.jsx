@@ -75,8 +75,11 @@ export default function Home() {
         setPage(1)
         
     }
-
-
+    // altura mayor a 15, attack 60 - 120.
+    // const handlePrueba = (e) => {
+    //     e.preventDefault()
+    //     dispatch(boton())
+    // }
     return (
         <div className={pokemons.length === 0 ? s.carga : s}>
             <div>
@@ -101,6 +104,9 @@ export default function Home() {
                         <option value="descendente">Z - A</option>
                     </select>
                 </div>
+                {/* <div>
+                    <button onClick={handlePrueba}>Boton</button>
+                </div> */}
                 <div>
                 <Search
                 setPage={setPage}
@@ -167,7 +173,7 @@ export default function Home() {
                 </div>
                 <div className={pokemonsFiltrados.length === 0 ? s.paginado2 : s.paginado}>
                     <button onClick={handlePrev} className={page === 1 ? s.ocultobtn : s.paginadobtn}>Prev</button>
-                    <p className={s.numeros}>{page} of {paginas}</p>
+                    <p className={s.numeros}>{page} of {paginas}  </p>
                     <button onClick={handleNext} className={page === paginas ? s.ocultobtn : s.paginadobtn}>Next</button>
                 </div> 
             </div>

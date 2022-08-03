@@ -54,7 +54,7 @@ export function validate(input) {
     // else if(!input.types) error.types = 'Debes ingresar al menos un valor'
     // else if(input.types < 1) error.types = 'El Pokemon debe tener al menos un Type'
     // else if(input.types > 2) error.types = 'El Pokemon no puede tener mas de dos Types'
-    
+    // if(i)
     // ERROR IMG
     if(input.img.length > 255) error.img = 'La URL supera los 255 caracteres'
     else if(input.img && !/[(http(s)?):/(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/.test(input.img)) error.img = 'La imagen debe ser HTTP'
@@ -96,7 +96,7 @@ export default function CreatePokemon() {
 
     // BOTON PARA CONTROLAR MAXIMOS DE TYPES
     useEffect(() => {
-        if(input.types.length === 2) {
+        if(input.types.length === 3) {
             setBtnTypes(false)
         } else {
             setBtnTypes(true)
@@ -142,7 +142,12 @@ export default function CreatePokemon() {
     const addType = (type) => {
         
         if(input.types){
-            input.types.push(type)
+            if(input.types.includes(type)){
+                return console.log('ya lo incluye')
+            }else{
+
+                input.types.push(type)
+            }
         }
         setInput({
             ...input,
