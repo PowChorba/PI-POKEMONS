@@ -205,3 +205,57 @@
     width: 250px;
     height: 250px;
 }
+
+
+@media (max-width: 320px){
+    .contenedor {
+        text-align: center;
+        height: 100%;
+    }
+
+    .titulo {
+        font-size: 26px;
+        text-align: center;
+        margin: 25px;
+        color: #fff;
+    }
+
+    .espejo {
+        display: none;
+    }
+
+    .formulario {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 25px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.548);
+    }
+
+    .types, .divBtn{
+        grid-column: 1;
+    }
+
+    .btnTypes {
+        border:none;
+        margin: 5px;
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: #110634e8;
+        color: #fff;
+        font-size: 12px;
+        
+    }
+
+    .btnTypes2 {
+        border:none;
+        margin: 5px;
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: #11063459;
+        color: #fff;
+    }
+    
+}

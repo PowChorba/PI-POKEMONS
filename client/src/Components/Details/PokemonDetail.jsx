@@ -39,7 +39,7 @@ export default function Details() {
                         
                         />
                 </div>
-                : <div className={s.prueba}><img src={pokeball} alt="asd" /></div>
+                : <div className={s.prueba}><img src={pokeball} alt="asd" className={s.precarga}/></div>
             }
           
         </div>)

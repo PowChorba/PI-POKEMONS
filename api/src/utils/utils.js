@@ -4,7 +4,7 @@ const {Pokemon, Type} = require('../db.js')
 const apiPokemonsData = async () => {
     try {
         let arrayPokemons = []
-        let apiPokemons = await  axios.get('https://pokeapi.co/api/v2/pokemon')
+        let apiPokemons = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=75&offset=0')
         let apiPokemonsB = await axios.get(apiPokemons.data.next)
         const apiPokemonsFull = apiPokemons.data.results.concat(apiPokemonsB.data.results)
         const apiUrlPokemons = apiPokemonsFull.map(data => axios.get(data.url))

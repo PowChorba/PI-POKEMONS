@@ -18,7 +18,7 @@
 .input:focus {
     outline: 0;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .btn {
@@ -28,4 +28,25 @@
     background-color: #110634a2;
     color: #fff;
     cursor: pointer;
+}
+
+@media (max-width: 768px){
+    .input {
+        border: none;
+        background-color: #110634a2;
+        border-radius: 15px;
+        text-align: center;
+        padding: 5px 10px;
+        color: #fff;
+        margin: 2px 5px;
+    }
+
+    .btn {
+        border: none;
+        padding: 5px 10px;
+        border-radius: 15px;
+        background-color: #110634a2;
+        color: #fff;
+        cursor: pointer;
+    }
 }

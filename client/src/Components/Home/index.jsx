@@ -15,9 +15,9 @@ export default function Home() {
     const pokemons = useSelector(state => state.filter)
     
     //PARA MANEJAR EL PAGINADO
-    const paginas = Math.ceil(pokemons.length / 12) 
+    const paginas = Math.ceil(pokemons.length / 6) 
     const [page, setPage] = useState(1)
-    const [pokemonsPerPage] = useState(12)
+    const [pokemonsPerPage] = useState(6)
     const ultima = page * pokemonsPerPage
     const primera = ultima - pokemonsPerPage
     const pokemonsFiltrados = pokemons.slice(primera, ultima)
@@ -34,6 +34,17 @@ export default function Home() {
         setPage(page + 1)
         if(page >= paginas){
             setPage(paginas)
+        }
+        window.scrollTo(0,0)
+    }
+
+    const handleFinal = (e) => {
+        setPage(paginas)
+        window.scrollTo(0,0)
+    }
+    const handleInicio = () => {
+        if(page === paginas){
+            setPage(1)
         }
         window.scrollTo(0,0)
     }
@@ -80,6 +91,7 @@ export default function Home() {
     //     e.preventDefault()
     //     dispatch(boton())
     // }
+    
     return (
         <div className={pokemons.length === 0 ? s.carga : s}>
             <div>
@@ -107,9 +119,10 @@ export default function Home() {
                 {/* <div>
                     <button onClick={handlePrueba}>Boton</button>
                 </div> */}
-                <div>
+                <div className={s.search}>
                 <Search
                 setPage={setPage}
+                
                 />
                 </div>
                 <div>
@@ -152,12 +165,13 @@ export default function Home() {
                         : 
                             typeof (pokemonsFiltrados) === 'object' && pokemonsFiltrados.map( e => {
                                 return <PokemonCard
-                                className={s.pokecards}
+                                
                                 key={e.id}
                                 name={e.name}
                                 types={e.types}
                                 img={e.img ? e.img : SiluetaCreate}
                                 id={e.id}
+                                
                                 />
     
                                 }
@@ -173,8 +187,18 @@ export default function Home() {
                 </div>
                 <div className={pokemonsFiltrados.length === 0 ? s.paginado2 : s.paginado}>
                     <button onClick={handlePrev} className={page === 1 ? s.ocultobtn : s.paginadobtn}>Prev</button>
-                    <p className={s.numeros}>{page} of {paginas}  </p>
-                    <button onClick={handleNext} className={page === paginas ? s.ocultobtn : s.paginadobtn}>Next</button>
+                    
+                    {/* <p className={s.numeros}>{page} of {paginas}</p> */}
+                    <span className={s.numeros}>{page} of </span>
+                    <button onClick={handleFinal} className={s.paginas}>{paginas}</button>
+                    
+                    {/* <button onClick={handleNext} className={page === paginas ? s.ocultobtn : s.paginadobtn}>Next</button>
+                    <button onClick={volver} className={page !== paginas ? s.ocultobtn : s.paginadobtn}>Back</button> */}
+                    {
+                        page === paginas 
+                        ? <button onClick={handleInicio} className={page !== paginas ? s.ocultobtn : s.paginadobtn}>Back</button>
+                        : <button onClick={handleNext} className={page === paginas ? s.ocultobtn : s.paginadobtn}>Next</button>
+                    }
                 </div> 
             </div>
         </div>)

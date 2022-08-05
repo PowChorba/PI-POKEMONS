@@ -96,7 +96,7 @@ export default function CreatePokemon() {
 
     // BOTON PARA CONTROLAR MAXIMOS DE TYPES
     useEffect(() => {
-        if(input.types.length === 3) {
+        if(input.types.length === 2) {
             setBtnTypes(false)
         } else {
             setBtnTypes(true)
@@ -143,7 +143,7 @@ export default function CreatePokemon() {
         
         if(input.types){
             if(input.types.includes(type)){
-                return console.log('ya lo incluye')
+                alert('Ya incluye ese tipo')
             }else{
 
                 input.types.push(type)
@@ -156,9 +156,7 @@ export default function CreatePokemon() {
     }
 
     const deleteType = () =>{
-        // if(input.types[0]){
-        //     input.types.shift()
-        // }
+        
         if(input.types){
             input.types.pop()
         }
@@ -190,7 +188,7 @@ export default function CreatePokemon() {
                 <form onSubmit={e => handleOnSumbit(e)} className={s.formulario}>
                 
                     <div className={s.types}>
-                        {/* <button type='button' onClick={() => deleteType()}>Delete Last Type Selected</button> */}
+                        
                         <p className={s.asd}>Select Types:</p>
                         {
                             typesState.map(e => {

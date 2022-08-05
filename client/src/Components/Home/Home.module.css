@@ -1,8 +1,7 @@
 .contenedor {
     width: 75%;
     margin: 0px auto;
-    height: 100%;
-}
+}   
 .contenedor2 {
     width: 75%;
     margin: 0px auto;
@@ -22,9 +21,6 @@
 }
 .precargar {
     width: 50vw;
-    
-    
-   
 }
 
 
@@ -53,6 +49,17 @@
     margin: 15px 15px;
     cursor: pointer;
 }
+.paginas {
+    border: none;
+    background: none;
+    margin-left: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.numeros {
+    font-size: 14px;
+}
+
 
 
 /*SELECTS*/
@@ -72,34 +79,27 @@
     cursor: pointer;
     border-radius: 15px;
 }
-
 .sortDB:focus{
     outline: 0;
-    border: none;
 }
 
 /* POKEMONS CARDS */
 .cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    
-}
-.pokecards:hover{
-    width: 1000px;
-    height: 100px;
-}
-
+    text-align: center;
+}    
 
 /* BACKGROUND LOADING */
 .carga {
     background-color: rgba(0, 0, 0, 0.842);
 }
+
 /*SEARCH ERROR*/
 .falseDiv{
-    grid-column: 1/3;
-    width: 100%;
-    height: 90vh;
-    margin: 150px auto;
+    grid-column: 2;
+    height: 35em;
+    margin: 50px auto;
 }
 
 .false {
@@ -109,4 +109,106 @@
     padding: 50px;
     background-color: #110634ce;
     border-radius: 25px;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1200px)  {
+    /*Filtros*/
+    .sortDB{
+        background-color: #110634a2;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 15px;
+    }
+    /*Errore en DB*/
+    .false {
+        font-size: 24px;
+        color: #fff;
+        text-align: center;
+        padding: 30px;
+        background-color: #110634ce;
+        border-radius: 25px;
+    }
+}
+
+@media (max-width: 1024px){
+    
+    .contenedor {
+        width: 100%;
+        margin: 0px auto;
+    }
+    .contenedor2 {
+        width: 100%;
+        margin: 0px auto;
+        height: 100vh;
+    }
+}
+
+@media (max-width: 768px){
+    /* POKEMONS CARDS */
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+    .sortDB{
+        background-color: #110634a2;
+        color: #fff;
+        border: none;
+        padding: 5px ;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 15px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px){
+    .filtrados {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+    .search {
+        grid-column: 1/3;
+        grid-row: 1;
+        margin: 10px;
+    }
+    .sortDB{
+        margin: 5px;
+        background-color: #110634a2;
+        color: #fff;
+        border: none;
+        padding: 5px ;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 15px;
+        font-size: 12px;
+    }
+    .paginado {
+        display: flex;
+        width: 75%;
+        margin: 0px auto;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 320px) {
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .paginado {
+        display: flex;
+        width: 100%;
+        margin: 0px auto;
+        justify-content: center;
+        align-items: center;
+    }
 }
