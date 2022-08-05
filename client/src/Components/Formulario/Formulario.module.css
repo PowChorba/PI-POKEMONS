@@ -1,6 +1,7 @@
 .contenedor {
     text-align: center;
-    height: 100vh;
+    height: 100%;
+    padding-bottom: 5%;
 }
 /* TITULO */
 .titulo {
