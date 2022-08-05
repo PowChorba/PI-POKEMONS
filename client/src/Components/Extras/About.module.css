@@ -1,0 +1,104 @@
+.contenedor {
+    width: 75%;
+    margin: 0px auto;
+    text-align: center;
+    height: 100vh;
+}
+
+.titulo {
+    font-size: 40px;
+    color: #fff;
+}
+
+.data{
+    width: 50%;
+    margin: 50px auto;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.623);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.hcuatro{
+    margin: 20px 0px;
+    font-size: 30px;
+}
+
+.iconos {
+    margin-top: 20px;
+}
+
+.icono {
+    margin: 0px 10px;
+    font-size: 50px;
+    color: #000;
+}
+
+@media only screen and (max-width: 1280px){
+    .contenedor {
+        width: 100%;
+        margin: 0px auto;
+        text-align: center;
+        height: 100vh;
+    }
+    
+    .data{
+        width: 75%;
+        margin: 50px auto;
+        font-size: 20px;
+        background-color: rgba(255, 255, 255, 0.623);
+        padding: 40px;
+        border-radius: 20px;
+    }
+}
+
+
+@media only screen and (max-width: 820px){
+    .contenedor {
+        width: 100%;
+        margin: 0px auto;
+        text-align: center;
+        height: 100vh;
+    }
+    
+    .data{
+        width: 75%;
+        margin: 50px auto;
+        font-size: 20px;
+        background-color: rgba(255, 255, 255, 0.623);
+        padding: 40px;
+        border-radius: 20px;
+    }
+}
+
+@media only screen and (max-width: 414px){
+    .contenedor {
+        width: 100%;
+        margin: 0px auto;
+        text-align: center;
+        height: 100vh;
+    }
+    
+    .data{
+        width: 75%;
+        margin: 20px auto;
+        font-size: 15px;
+        background-color: rgba(255, 255, 255, 0.623);
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .hcuatro{
+        margin: 20px 0px;
+        font-size: 24px;
+    }
+    .icono {
+        margin: 0px 10px;
+        font-size: 30px;
+        color: #000;
+    }
+    .titulo {
+        margin-top: 10px;
+        font-size: 34px;
+        color: #fff;
+    }
+}

@@ -4,6 +4,7 @@ import Home from './Components/Home/index.jsx';
 import Welcome from './Components/PaginaInicial/index.jsx'
 import Details from './Components/Details/PokemonDetail.jsx';
 import CreatePokemon from './Components/Formulario/Formulario.jsx';
+import About from './Components/Extras/About.jsx';
 import s from './App.module.css'
 import dotenv from 'dotenv'
 import axios from 'axios';
@@ -19,6 +20,7 @@ function App() {
         <Route exact path='/home' component={Home}/>
         <Route path='/home/:id' component={Details}/>
         <Route exact path='/create' component={CreatePokemon}/>
+        <Route path='/about' component={About}/>
       </React.Fragment>
     </div>
   );

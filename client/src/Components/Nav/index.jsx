@@ -30,6 +30,11 @@ export default function Nav(){
                             <p>Create</p>
                         </NavLink>
                     </li>
+                    <li className={s.lista}>
+                        <NavLink to='/about' activeClassName={s.asd}   className={s.link}>
+                            <p>About</p>
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
             

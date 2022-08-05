@@ -10,19 +10,6 @@
     margin-bottom: 20px;
 }
 
-.id{
-    position: relative;
-    top: 30px;
-}
-
-/* .precargar {
-    width: 80vw;
-    height: 70vh;
-    justify-content: center;
-    margin: 0px auto;
-    
-} */
-
 .prueba{
     text-align: center;
      height: 100vh;
@@ -52,11 +39,8 @@
         font-size: 36px;
         
     }
+
     
-    .id{
-        position: relative;
-        top: 42px;
-    }
 }
 
 
@@ -84,10 +68,7 @@
         font-size: 36px;
         
     }
-    .id{
-        position: relative;
-        top: 42px;
-    }
+    
 }
 
 @media only screen and (max-width: 320px){
@@ -114,10 +95,7 @@
         font-size: 36px;
         
     }
-    .id{
-        position: relative;
-        top: 42px;
-    }
+   
 }
 
 
