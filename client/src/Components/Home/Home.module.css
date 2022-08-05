@@ -198,7 +198,7 @@
     }
 }
 
-@media only screen and (max-width: 368px) {
+@media only screen and (max-width: 414px) {
     .cards {
         display: grid;
         grid-template-columns: 1fr;

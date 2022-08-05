@@ -29,7 +29,37 @@
     background-color: rgba(0, 0, 0, 0.842);
 }
 
-@media (max-width: 320px){
+@media only screen and (max-width: 414px){
+    .contenedor{
+        text-align: center;
+        height: 100vh;
+        
+    }
+    .precarga {
+        width: 50vw;
+        height: 50vh;
+        
+        
+        
+    }
+    .prueba{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .titulo {
+        
+        font-size: 36px;
+        
+    }
+    .id{
+        position: relative;
+        top: 42px;
+    }
+}
+
+@media only screen and (max-width: 320px){
     .contenedor{
         text-align: center;
         height: 100vh;
