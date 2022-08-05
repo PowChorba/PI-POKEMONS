@@ -67,6 +67,18 @@
     font-weight: 600;
 }
 
+@media only screen and (max-width: 1024px){
+    .contenedor {
+        margin: 0px auto;
+        width: 75%;
+        background-color: rgba(255, 255, 255, 0.616);
+        padding: 25px;
+        border-radius: 20px;
+    }
+    
+}
+
+
 @media only screen and (max-width: 414px){
     .contenedor {
         margin: 0px auto;
