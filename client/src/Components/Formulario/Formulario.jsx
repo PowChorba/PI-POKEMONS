@@ -9,46 +9,46 @@ export function validate(input) {
     let error = {};
     
     //ERROR NAME
-    if(!input.name) error.name = 'Debes ingresar un nombre valido'
-    else if(!/^[a-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(input.name)) error.name = 'El nombre no puede contener mayusculas/numeros/caracteres especiales'
-    else if(input.name.length > 10 ) error.name = 'El nombre ingresado es muy largo'
-    else if(input.name.length < 3) error.name = 'El nombre ingresado es muy corto'
+    if(!input.name) error.name = 'You must enter a name'
+    else if(!/^[a-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(input.name)) error.name = 'The name cannot contain capital letters/numbers/special characters'
+    else if(input.name.length > 10 ) error.name = 'The name entered is too long'
+    else if(input.name.length < 3) error.name = 'The name entered is too short'
     
     //ERROR HEALTH
-    else if(!input.health) error.health = 'Debes ingresar un valor'
-    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.health)) error.health ='Debes ingresar un numero entero'
-    else if(input.health  > 150) error.health = 'La vida  no puede ser superior a 150'
-    else if(input.health < 10) error.health = 'La vida  no puede ser inferior a 10'
+    else if(!input.health) error.health = 'You must enter a value'
+    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.health)) error.health ='You must enter an integer'
+    else if(input.health  > 150) error.health = 'Health can`t be bigger than 150'
+    else if(input.health < 10) error.health = 'Health can`t be lower than 10'
     
     //ERROR ATTACK
-    else if(!input.attack) error.attack = 'Debes ingresar un valor'
-    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.attack)) error.attack ='Debes ingresar un numero entero'
-    else if(input.attack > 150) error.attack = 'El ataque no puede ser superior a 150'
-    else if(input.attack < 10) error.attack = 'El ataque no puede ser inferior a 10'
+    else if(!input.attack) error.attack = 'You must enter a value'
+    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.attack)) error.attack ='You must enter an integer'
+    else if(input.attack > 150) error.attack = 'Attack can`t be bigger than 150'
+    else if(input.attack < 10) error.attack = 'Attack can`t be lower than 10'
     
     //ERROR DEFENSE
-    else if(!input.defense) error.defense = 'Debes ingresar un valor'
-    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.defense)) error.defense ='Debes ingresar un numero entero'
-    else if(input.defense > 150) error.defense = 'La defensa no puede ser superior 150'
-    else if(input.defense < 10) error.defense = 'La defensa no puede ser inferior a 10'
+    else if(!input.defense) error.defense = 'You must enter a value'
+    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.defense)) error.defense ='You must enter an integer'
+    else if(input.defense > 150) error.defense = 'Defense can`t be bigger than 150'
+    else if(input.defense < 10) error.defense = 'Defense can`t be lower than 10'
     
     //ERROR SPEED
-    else if(!input.speed) error.speed = 'Debes ingresar un valor'
-    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.speed)) error.speed ='Debes ingresar un numero entero'
-    else if(input.speed > 150) error.speed = 'La velocidad no puede ser superior a 150'
-    else if(input.speed < 10) error.speed = 'La velocidad no puede ser inferior a 10'
+    else if(!input.speed) error.speed = 'You must enter a value'
+    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.speed)) error.speed ='You must enter an integer'
+    else if(input.speed > 150) error.speed = 'Speed can`t be bigger than 150'
+    else if(input.speed < 10) error.speed = 'Speed can`t be lower than 10'
     
      //ERROR HEIGHT
-    else if(!input.height) error.height = 'Debes ingresar un valor'
-    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.height)) error.height ='Debes ingresar un numero entero'
-    else if(input.height > 30) error.height = 'La altura no puede ser superior a 30'
-    else if(input.height < 1) error.height = 'La altura no puede ser inferior a 1'
+    else if(!input.height) error.height = 'You must enter a value'
+    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.height)) error.height ='You must enter an integer'
+    else if(input.height > 30) error.height = 'Height can`t be bigger than 30'
+    else if(input.height < 1) error.height = 'Height can`t be lower than 1'
     
     //ERROR WEIGHT
-    else if(!input.weight) error.weight = 'Debes ingresar un valor'
-    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.weight)) error.weight ='Debes ingresar un numero entero'
-    else if(input.weight > 1500) error.weight = 'El peso no puede ser superior a 1500kg'
-    else if(input.weight < 10) error.weight = 'El peso no puede ser inferior a 10kg'
+    else if(!input.weight) error.weight = 'You must enter a value'
+    else if(!/^-?(?:\d+(?:,\d*)?)$/.test(input.weight)) error.weight ='You must enter an integer'
+    else if(input.weight > 1500) error.weight = 'Weight can`t be bigger than 1500kg'
+    else if(input.weight < 10) error.weight = 'Weight can`t be lower than 10kg'
     
     //ERROR TYPES
     // else if(!input.types) error.types = 'Debes ingresar al menos un valor'
@@ -56,8 +56,8 @@ export function validate(input) {
     // else if(input.types > 2) error.types = 'El Pokemon no puede tener mas de dos Types'
     // if(i)
     // ERROR IMG
-    if(input.img.length > 255) error.img = 'La URL supera los 255 caracteres'
-    else if(input.img && !/[(http(s)?):/(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/.test(input.img)) error.img = 'La imagen debe ser HTTP'
+    if(input.img.length > 255) error.img = 'The URL can`t have more than 255 chars'
+    else if(input.img && !/[(http(s)?):/(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/.test(input.img)) error.img = 'The IMG format must be HTTP'
     return error
 }
 
@@ -123,7 +123,7 @@ export default function CreatePokemon() {
         }
         
         dispatch(createPokemon(input))
-        alert('Pokemon creado correctamente')
+        alert('Pokemon created successfully')
         setInput({
             name: '',
             health: '',
@@ -143,7 +143,7 @@ export default function CreatePokemon() {
         
         if(input.types){
             if(input.types.includes(type)){
-                alert('Ya incluye ese tipo')
+                alert('You already selected that type')
             }else{
 
                 input.types.push(type)

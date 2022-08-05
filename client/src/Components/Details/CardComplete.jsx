@@ -28,7 +28,7 @@ export default function CardComplete({id,name,img,health,attack,defense,speed,he
                 <p className={s.types}>Types : {types.join(' ')}</p>
             </div>
             <Link to={'/home'}>
-                <button className={s.btn}>Volver</button>
+                <button className={s.btn}>Back</button>
             </Link>
         </div>)
 }
