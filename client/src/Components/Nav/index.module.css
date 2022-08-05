@@ -62,7 +62,50 @@
     }
 }
 
-@media (max-width: 320px){
+@media only screen and (max-width: 368px){
+    .responsive{
+        display: flex;
+        width: 100%;
+        background-color: #d13300;
+        padding: 15px 5px;
+        justify-content: space-evenly;
+        align-items: center;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .bars{
+        font-size: 30px;
+    }
+    
+    .tituloR {
+        font-size: 30px;
+    }
+
+    .ul{
+        display: block;
+        text-align: center;
+        background-color: #d13300;
+    }
+
+    /*NAV NO RESOPNSIVE PARA QUE NO SE VEA*/
+    .nav{
+        display: none;
+        margin: 0px;
+    }
+    .navDos{
+        display: block;
+        margin: 0px;
+    }
+    .titulo {
+        display: none;
+    }
+    .pokeball {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 320px){
     .responsive{
         display: flex;
         width: 100%;

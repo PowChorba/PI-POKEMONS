@@ -113,7 +113,7 @@
 
 
 /* RESPONSIVE */
-@media (max-width: 1200px)  {
+@media only screen and (max-width: 1200px)  {
     /*Filtros*/
     .sortDB{
         background-color: #110634a2;
@@ -135,7 +135,7 @@
     }
 }
 
-@media (max-width: 1024px){
+@media only screen and (max-width: 1024px){
     
     .contenedor {
         width: 100%;
@@ -148,7 +148,7 @@
     }
 }
 
-@media (max-width: 768px){
+@media only screen and (max-width: 768px){
     /* POKEMONS CARDS */
     .cards {
         display: grid;
@@ -167,7 +167,7 @@
     }
 }
 
-@media (max-width: 480px){
+@media only screen and (max-width: 480px){
     .filtrados {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -198,7 +198,22 @@
     }
 }
 
-@media (max-width: 320px) {
+@media only screen and (max-width: 368px) {
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .paginado {
+        display: flex;
+        width: 100%;
+        margin: 0px auto;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 320px) {
     .cards {
         display: grid;
         grid-template-columns: 1fr;
