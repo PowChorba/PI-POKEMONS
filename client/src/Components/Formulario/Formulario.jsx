@@ -83,7 +83,7 @@ export default function CreatePokemon() {
         img: ''
         
     })
-    
+    console.log(input)
     
     useEffect(() => {
         dispatch(getPokemons())

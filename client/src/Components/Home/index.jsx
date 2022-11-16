@@ -92,6 +92,8 @@ export default function Home() {
     //     dispatch(boton())
     // }
     
+    console.log(pokemonsFiltrados)
+
     return (
         <div className={pokemons.length === 0 ? s.carga : s}>
             <div>
